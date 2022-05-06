@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:pm1_sala_flutter/pages/home.dart';
+import 'package:pm1_sala_flutter/pages/teste.dart';
+
 void main() => runApp(const Review1());
 
 class Review1 extends StatefulWidget {
@@ -10,28 +13,8 @@ class Review1 extends StatefulWidget {
 }
 
 class _Review1State extends State<Review1> {
-  
-  _appBar(String title, bool center, Color color) {
-    return AppBar(
-      title: Text(title),
-      centerTitle: center,
-      backgroundColor: color,
-      actions: [
-        IconButton(
-          icon: const Icon(Icons.search),
-          onPressed: () {},
-        )
-      ],
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: _appBar('App de Cadastro', true, Colors.orange)
-        )
-      );
+    return Teste();
   }
 }
