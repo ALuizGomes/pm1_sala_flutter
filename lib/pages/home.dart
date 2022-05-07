@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../constructor/user_dummy.dart';
 
@@ -26,34 +25,46 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // _addButton() {
-  //   return FloatingActionButton(
-  //     backgroundColor: Colors.orange,
-  //     child: const Icon(Icons.add_outlined),      
-  //     onPressed: () => showModalBottomSheet(
-  //       context: context, 
-  //       builder: (context) => Container(
-  //         height: 200,
-  //         color: Colors.white,
-  //         child: Center(
-  //           child: Column(
-  //             children: [
-  //               const TextField(
-  //                 decoration: InputDecoration(
-  //                   hintText: 'Nome',
-  //                 ), 
-  //               ),
-  //               TextButton(
-  //                 child: const Text('Registrar'),
-  //                 onPressed: () => Navigator.pop(context),
-  //               )
-  //             ],
-  //           ),
-  //         )
-  //       )
-  //     )
-  //   );
-  // }
+  _addButton() {
+    return FloatingActionButton(
+      elevation: 20,
+      backgroundColor: Colors.orange,
+      child: const Icon(Icons.add_outlined),      
+      onPressed: () => showModalBottomSheet(
+        isScrollControlled: true,
+        context: context, 
+        builder: (ctx) => Container(
+          height: 350,
+          color: Colors.white,
+          child: Center(
+            child: Column(
+              children: [
+                const Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20))
+                  ),
+                  margin: EdgeInsets.fromLTRB(5, 10, 5, 0),
+                  child: TextField(
+                    scrollPadding: EdgeInsets.all(50),
+                    decoration: InputDecoration(
+                      hintText: 'Nome',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(20))
+                      )
+                    ), 
+                  ),
+                ),
+                TextButton(
+                  child: const Text('Registrar'),
+                  onPressed: () => Navigator.pop(ctx),
+                )
+              ],
+            ),
+          )
+        )
+      )
+    );
+  }
 
   _cardForms(String nome, String cpf, String email) {
     return Card(
@@ -76,7 +87,7 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          // floatingActionButton: _addButton(),
+          floatingActionButton: _addButton(),
           appBar: _appBar('App de Cadastro', true, Colors.orange),
           body: Container(
             color: Colors.lightBlue,
@@ -85,22 +96,6 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     _cardForms(usr.nome, usr.cpf, usr.email),
-                    ElevatedButton(
-                      child: const Text('Adicionar'),
-                      onPressed: () => showModalBottomSheet(
-                        context: context, 
-                        builder: (BuildContext context) => Container(
-                          height: 300,
-                          child: Center(
-                            child: Column(
-                              children: [
-                                const Text('Seu Modal Aqui')
-                              ],
-                            ),
-                          ),
-                        )
-                      ),
-                    )
                   ],
                 ),
               )

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:pm1_sala_flutter/pages/home.dart';
-import 'package:pm1_sala_flutter/pages/teste.dart';
+// import 'package:pm1_sala_flutter/pages/teste.dart';
 
 void main() => runApp(const Review1());
 
@@ -15,6 +15,9 @@ class Review1 extends StatefulWidget {
 class _Review1State extends State<Review1> {
   @override
   Widget build(BuildContext context) {
-    return Teste();
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage()
+      );
   }
 }
