@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pm1_sala_flutter/Content/popUpScreen.dart';
 
 import '../constructor/user_dummy.dart';
 
@@ -30,38 +31,9 @@ class _HomePageState extends State<HomePage> {
       elevation: 20,
       backgroundColor: Colors.orange,
       child: const Icon(Icons.add_outlined),      
-      onPressed: () => showModalBottomSheet(
-        isScrollControlled: true,
-        context: context, 
-        builder: (ctx) => Container(
-          height: 350,
-          color: Colors.white,
-          child: Center(
-            child: Column(
-              children: [
-                const Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20))
-                  ),
-                  margin: EdgeInsets.fromLTRB(5, 10, 5, 0),
-                  child: TextField(
-                    scrollPadding: EdgeInsets.all(50),
-                    decoration: InputDecoration(
-                      hintText: 'Nome',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20))
-                      )
-                    ), 
-                  ),
-                ),
-                TextButton(
-                  child: const Text('Registrar'),
-                  onPressed: () => Navigator.pop(ctx),
-                )
-              ],
-            ),
-          )
-        )
+      onPressed: () => showDialog(
+        context: context,
+        builder: (_) => const PopUpScreen(),
       )
     );
   }
