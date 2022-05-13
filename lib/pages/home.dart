@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pm1_sala_flutter/Content/popUpScreen.dart';
+import 'package:pm1_sala_flutter/Content/navigationBar.dart';
 
 import '../constructor/user_dummy.dart';
 
@@ -26,17 +26,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  _addButton() {
-    return FloatingActionButton(
-      elevation: 20,
-      backgroundColor: Colors.orange,
-      child: const Icon(Icons.add_outlined),      
-      onPressed: () => showDialog(
-        context: context,
-        builder: (_) => const PopUpScreen(),
-      )
-    );
-  }
 
   _cardForms(String nome, String cpf, String email) {
     return Card(
@@ -59,7 +48,7 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          floatingActionButton: _addButton(),
+          bottomNavigationBar: AppNavigationBar(),
           appBar: _appBar('App de Cadastro', true, Colors.orange),
           body: Container(
             color: Colors.lightBlue,
