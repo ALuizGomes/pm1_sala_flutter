@@ -24,7 +24,7 @@ class _AppNavigationBarState extends State<AppNavigationBar> {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.list),
-          label: 'Listar'
+          label: 'Register'
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.search),

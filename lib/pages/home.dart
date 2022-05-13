@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          bottomNavigationBar: AppNavigationBar(),
+          bottomNavigationBar: const AppNavigationBar(),
           appBar: _appBar('App de Cadastro', true, Colors.orange),
           body: Container(
             color: Colors.lightBlue,
